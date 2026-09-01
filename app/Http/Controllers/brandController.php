@@ -34,14 +34,20 @@ class brandController extends Controller
         $name=$req->name;
         $v_of_items=$req->v_of_items;
         $location=$req->location;
-        if(!$name||!$v_of_items||!$location){
+        $phone_number=$req->phone_number;
+        $email=$req->email;
+        $registration_no=$req->registration_no;
+        if(!$name||!$v_of_items||!$location||!$phone_number||!$email||!$registration_no){
             return response()->json(['message'=>'Please fill all the fields']);
         }
         else{
             Brand::create([
                 'name'=>$name,
                 'v_of_items'=>$v_of_items,
-                'location'=>$location
+                'location'=>$location,
+                'phone_number'=>$phone_number,
+                'email'=>$email,
+                'registration_no'=>$registration_no
             ]);
             return response()->json(['message'=>'Brand created successfully']);
         }

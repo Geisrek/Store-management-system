@@ -67,4 +67,49 @@ class ItemsController extends Controller
             return response()->json(['message'=>'Item deleted successfully']);
         }
     }
+    function getItemBySerialNumber(Request $req){
+        $s_nb=$req->serial_number;
+        if(!$s_nb){
+            return response()->json(['message'=>'Please provide serial_number']);
+        }
+        else{
+            $item=Items::where('serial_number',$s_nb)->first();
+            if(!$item){
+                return response()->json(['message'=>'Item not found']);
+            }
+            else{
+                return response()->json($item);
+            }
+        }
+    }
+    function getItemByBarcode(Request $req){
+        $barcode=$req->barcode;
+        if(!$barcode){
+            return response()->json(['message'=>'Please provide barcode']);
+        }
+        else{
+            $item=Items::where('barcode',$barcode)->first();
+            if(!$item){
+                return response()->json(['message'=>'Item not found']);
+            }
+            else{
+                return response()->json($item);
+            }
+        }
+    }
+    function getItemById(Request $req){
+        $id=$req->id;
+        if(!$id){
+            return response()->json(['message'=>'Please provide id']);
+        }
+        else{
+            $item=Items::find($id);
+            if(!$item){
+                return response()->json(['message'=>'Item not found']);
+            }
+            else{
+                return response()->json($item);
+            }
+        }
+    }
 }
