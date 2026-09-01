@@ -19,6 +19,7 @@ class customersController extends Controller
         $phone=$req->phone_number;
         $username=$req->username;
         $password=$req->password;
+        $note=$req->note;
         if(!$f_name||!$l_name||!$address||!$phone||!$username||!$password){
             return response()->json(['message'=>'Please fill all the fields']);
         }
@@ -29,7 +30,8 @@ class customersController extends Controller
                 'address'=>$address,
                 'phone_number'=>$phone,
                 'username'=>$username,
-                'password'=>$password
+                'password'=>$password,
+                'note'=>$note
             ]);
             return response()->json(['message'=>'Customer created successfully']);
 

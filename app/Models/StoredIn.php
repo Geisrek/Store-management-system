@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StoredIn extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'stored_in';
     protected $fillable = [
         'serial_number',

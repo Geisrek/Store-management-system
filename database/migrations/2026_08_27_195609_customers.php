@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone_number')->unique();
             $table->string('username')->unique();
             $table->string('password');
-            $table->string("note");
+            $table->string("note")->nullable();
         });
     }
 

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Items extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = "items";
     protected $fillable = [
         'serial_number',

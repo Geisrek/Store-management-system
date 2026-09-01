@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Receipts extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'receipts';
     protected $fillable = [
         'total_price',
