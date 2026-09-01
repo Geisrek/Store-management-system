@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('wholesale_customers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->integer('priority_level');
         });

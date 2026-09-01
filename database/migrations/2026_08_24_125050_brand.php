@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('location');
-            $table->string('v.of_Items');
+            $table->string('v_of_Items');
             $table->string('email');
             $table->integer('phone_number');
             $table->integer('registration_no');

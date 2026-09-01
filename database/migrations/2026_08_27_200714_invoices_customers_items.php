@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('invoice_id')->constrained('invoices');
             $table->foreignId('customer_id')->constrained('customers');
-            $table->foreignId('s_nb')->constrained('items', 'serial_number');
+            $table->integer('serial_number');   
+            $table->foreign('serial_number')->references('serial_number')->on('items');
             $table->string('i_name');
             $table->date('date');
             $table->float('total_price');

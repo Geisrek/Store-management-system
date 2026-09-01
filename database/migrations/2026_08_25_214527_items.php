@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('price', 5, 2);
             $table->integer('height');
             $table->integer('width');
-            $table->foreign('brand_id')->references('id')->on('brands')->cascadeOnDelete();
+            $table->foreignId('brand_id')->constrained('brands')->cascadeOnDelete();
         });
     }
 

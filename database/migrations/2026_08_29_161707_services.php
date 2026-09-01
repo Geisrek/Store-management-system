@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('service_name');
-            $table->foreignId('customer_phone_number')->constrained('customers', 'phone_number');
+            $table->string('customer_phone_number');
+            $table->foreign('customer_phone_number')->references('phone_number')->on('customers');
             $table->string('fee');
             $table->string('material_cost');
             $table->date('date');
